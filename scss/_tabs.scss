@@ -1,0 +1,41 @@
+.tabs {
+  max-width: 600px;
+  margin-top: 0.5em;
+  .menu {
+    @include flex();
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    li {
+      flex: 1;
+      margin: 0 .2em;
+      &:first-child {
+        margin: 0 .2em 0 0;
+      }
+      &:last-child {
+        margin: 0 0 0 .2em;
+      }
+      a {
+        display: block;
+        text-align: center;
+        padding: .5em;
+        text-decoration: none;
+        color: $color_black;
+        box-shadow: 0 2px 5px $color_gray;
+
+        &:hover, &.active {
+          background: black;
+          color: $color_white;
+        }
+      }
+    }
+  }
+  .content {
+    > div {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+  }
+}

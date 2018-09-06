@@ -1,0 +1,134 @@
+.bear-container {
+  @include flex;
+  @include justify-content(center);
+  @include align-items(center);
+  @include size($height: 100vh);
+  .face {
+    @include position(relative);
+    display: block;
+    @include flex;
+    @include justify-content(space-between);
+    @include size($width: 500px, $height: 500px);
+    @extend .circle;
+    background-color: $color_bear;
+    border: $bear_contours;
+  }
+  .ear {
+    @include size($width: 150px, $height: 150px);
+    @extend .circle;
+    background-color: $color_bear;
+    border: $bear_contours;
+    z-index: -1;
+  }
+  .eye {
+    @include size($width: 100px, $height: 120px);
+    background: $color_bear_eye;
+    @include position(absolute, $top: 50%);
+    @extend .circle;
+    border: $bear_contours;
+    &-left {
+      left: 15%;
+    }
+    &-right {
+      right: 15%;
+    }
+    .pupil {
+      @include position(absolute, $top: 10%, $left: 10%);
+      @include size($width: 50px, $height: 60px);
+      @extend .circle;
+      background: $color_white;
+    }
+    .iris {
+      @include position(absolute, $top: 50%, $left: 60%);
+      @include size($width: 30px, $height: 30px);
+      @extend .circle;
+      background: $color_white;
+    }
+  }
+  .snout {
+    @include position(absolute, $top: 65%, $left: 50%);
+    @include size($width: 120px, $height: 100px);
+    transform: translate(-50%, 0%);
+    @extend .circle;
+    border: $bear_contours;
+    @include flex;
+    @include justify-content(center);
+    .nose {
+      @include size($width: 45px, $height: 35px);
+      background: $color_bear_contour;
+      margin-top: 20px;
+      @extend .circle;
+      @include flex;
+      @include justify-content(center);
+      @include position(relative);
+      &-line {
+        @include position(absolute, $top: 0);
+        color: $color_bear_contour;
+        margin-top: 15px;
+        font-weight: bolder;
+        font-size: 30px;
+      }
+    }
+    .mouth {
+      @include position(absolute, $top: 65%);
+      @include size($width: 50px, $height: 15px);
+      border-bottom: $bear_contours;
+      border-radius: 30px/10px;
+    }
+  }
+  .bear-body {
+    @include position(absolute, $bottom: -50px);
+    @include size($width: 300px, $height: 300px);
+    background: $color_bear;
+    border: $bear_contours;
+    z-index: -2;
+    border-radius: 130px;
+    .hand {
+      @include size($width: 90px, $height: 50px);
+      background: $color_bear;
+      border: $bear_contours;
+      z-index: -3;
+      &-left {
+        @include position(relative, $top: 35%, $left: 10%);
+        border-radius: 100% 100% 100% 30%;
+        transform: rotate(20deg);
+        border-left: none;
+      }
+      &-right {
+        @include position(relative, $top: 20%, $right: -60%);
+        border-radius: 100% 100% 30% 100%;
+        transform: rotate(-20deg);
+        border-right: none;
+      }
+    }
+    .leg {
+      @include position(absolute, $bottom: 0);
+      @include size($width: 110px, $height: 130px);
+      background: $color_bear;
+      border: $bear_contours;
+      @extend .circle;
+      &-left {
+        left: 0;
+        transform: rotate(-30deg);
+      }
+      &-right {
+        right: 0;
+        transform: rotate(30deg);
+      }
+      .heel {
+        @include size($width: 80%, $height: 80%);
+        @extend .circle;
+        background: $color_bear_contour;
+        @include position(absolute);
+        bottom: 10%;
+        &-left {
+          left: 10%;
+        }
+        &-right {
+          right: 10%;
+        }
+      }
+    }
+  }
+}
+

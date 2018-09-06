@@ -1,0 +1,36 @@
+$container_max_width: 1200px;
+$root_font_size: 16px;
+$base_line_height: 1.5;
+$base_font_family: 'Amaranth', sans-serif;
+$second_font_family: 'Chivo', sans-serif;
+$margin_section: 0 1.5rem;
+$side_mobile_margin: 0 1.5rem;
+$side_desktop_margin: 0 3rem;
+$nav_height: 6rem;
+$font_weight: 400;
+
+$color_body: #ffffff;
+$color_black: black;
+$color_gray: gray;
+$color_white: #fff;
+
+//bear
+$color_bear: #f8dd2e;
+$color_bear_eye: #0e0e0e;
+$color_bear_contour: #484848;
+$bear_contours: 5px solid $color_bear_contour;
+
+//orange
+$color_orange: #ff8826;
+$color_orange_dark: darken($color_orange, 10%);
+$color_orange_mouth: #a52214;
+$color_orange_leaf: #6DC75F;
+$color_orange_twig: saddlebrown;
+
+//rabbit
+$color_rabbit: pink;
+$color_rabbit_dark: darken($color_rabbit, 20%);
+$color_rabbit_ear_inside: #fffac1;
+$color_rabbit_contour: #080808;
+$rabbit_contours: 10px solid $color_rabbit_contour;
+$color_leaves: green;

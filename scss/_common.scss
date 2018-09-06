@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Amaranth:400,700');
+@import url('https://fonts.googleapis.com/css?family=Chivo:400,700');
+
+:root {
+  font-size: $root_font_size;
+  line-height: $base_line_height;
+}
+
+body {
+  font-family: $base_font_family;
+  background-color: $color_body;
+  padding: 0;
+  font-weight: $font_weight;
+}
+
+.container {
+  width: 100%;
+  @include flex();
+  @include justify-content(center);
+}

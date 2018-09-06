@@ -1,0 +1,194 @@
+.rabbit-container {
+  @include flex;
+  @include justify-content(center);
+  @include align-items(center);
+  @include size($height: 100vh);
+  margin-top: 50px;
+  .rabbit-face {
+    @include position(relative);
+    display: block;
+    @include flex;
+    @include justify-content(center);
+    @include size($width: 500px, $height: 450px);
+    @extend .circle;
+    background-color: $color_rabbit;
+    border: $rabbit_contours;
+    margin-top: 20%;
+    .ear {
+      @include position(absolute, $bottom: 300px);
+      @include size($width: 150px, $height: 450px);
+      @extend .circle;
+      border: $rabbit_contours;
+      background-color: $color_rabbit;
+      z-index: -1;
+      &-left {
+        left: 0;
+        transform: rotate(-20deg);
+      }
+      &-right {
+        right: 0;
+        transform: rotate(20deg);
+      }
+      .ear-inside {
+        @include position(absolute, $top: 10%, $left: 10%);
+        @include size($width: 80%, $height: 80%);
+        @extend .circle;
+        border: $rabbit_contours;
+        background: $color_rabbit_ear_inside;
+      }
+    }
+    .eye {
+      @include position(relative);
+      @extend .circle;
+      @include size($width: 150px, $height: 150px);
+      background: $color_black;
+      margin-top: 130px;
+      &-left {
+        margin-right: 30px;
+      }
+      &-right {
+        margin-left: 30px;
+      }
+      .iris {
+        @include position(absolute);
+        @include size($width: 100%, $height: 100%);
+        @extend .circle;
+        background: $color_black;
+
+      }
+      .pupil {
+        @include position(absolute);
+        @extend .circle;
+        background: $color_white;
+        &-small {
+          @include size($width: 22px, $height: 22px);
+          top: 15%;
+          right: 20%;
+        }
+        &-large {
+          @include size($width: 50px, $height: 50px);
+          bottom: 10%;
+          left: 20%;
+        }
+      }
+    }
+    .nose {
+      @include position(absolute, $top: 65%);
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-top: 50px solid $color_black;
+      border-radius: 10px;
+    }
+    .mouth {
+      @include position(absolute, $top: 68%);
+      @include size($width: 50px, $height: 5px);
+      background: $color_rabbit_contour;
+      @include size($width: 50px, $height: 10px);
+      &-left {
+        @include size($width: 50px, $height: 50px);
+        background: transparent;
+        @extend .circle;
+        border: 10px solid;
+        border-color: transparent transparent $color_black $color_black;
+        transform: rotate(-47deg);
+        left: 40%;
+      }
+      &-right {
+        @include size($width: 50px, $height: 50px);
+        background: transparent;
+        @extend .circle;
+        border: 10px solid;
+        border-color: transparent transparent $color_black $color_black;
+        transform: rotate(-47deg);
+        right: 40%;
+      }
+    }
+  }
+  .rabbit-body {
+    @include position(absolute, $bottom: -200px);
+    @include size($width: 400px, $height: 400px);
+    border: $rabbit_contours;
+    z-index: -2;
+    display: block;
+    background-color: $color_rabbit;
+    border-radius: 50% 50% 50% 50%  / 60% 60% 40% 40%;
+
+    .hand {
+      @include size($width: 140px, $height: 60px);
+      background: $color_rabbit;
+      border: $rabbit_contours;
+      z-index: 1;
+      &-left {
+        @include position(relative, $top: 35%, $left: 15%);
+        border-radius: 100% 100% 100% 30%;
+        transform: rotate(40deg);
+        border-left: none;
+      }
+      &-right {
+        @include position(relative, $top: 20%, $right: -50%);
+        border-radius: 100% 100% 30% 100%;
+        transform: rotate(-40deg);
+        border-right: none;
+      }
+    }
+    .carrot {
+      @include size($width: 80px, $height: 160px);
+      @include position(absolute, $top: 38%, $left: 40%);
+      border-radius: 50% 50% 50% 50%  / 40% 40% 60% 60%;
+      transform: rotate(10deg);
+      background: orange;
+      border: $rabbit_contours;
+      .leaves-left,
+      .leaves-center,
+      .leaves-right {
+        background: $color_leaves;
+        border: 3px solid $color_black;
+        @extend .circle;
+      }
+      .leaves-left,
+      .leaves-right {
+        @include size($width: 15px, $height: 55px);
+      }
+      .leaves-left {
+        @include position(absolute, $top: -33%, $left: 10%);
+      }
+      .leaves-center {
+        @include size($width: 20px, $height: 70px);
+        @include position(absolute, $top: -43%, $left: 33%);
+      }
+      .leaves-right {
+        @include position(absolute, $top: -33%, $left: 62%);
+      }
+    }
+    .leg {
+      @include position(absolute, $bottom: 0);
+      @include size($width: 130px, $height: 170px);
+      background: $color_rabbit;
+      border: $rabbit_contours;
+      border-radius: 50% 50% 50% 50%  / 40% 40% 60% 60%;
+
+      &-left {
+        left: 0;
+        transform: rotate(-30deg);
+      }
+      &-right {
+        right: 0;
+        transform: rotate(30deg);
+      }
+      .heel {
+        @include size($width: 80%, $height: 70%);
+        border-radius: 50% 50% 50% 50%  / 40% 40% 60% 60%;
+        background: $color_rabbit_dark;
+        @include position(absolute);
+        bottom: 10%;
+        &-left {
+          left: 10%;
+        }
+        &-right {
+          right: 10%;
+        }
+      }
+    }
+  }
+}
+

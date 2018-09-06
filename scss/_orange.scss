@@ -1,0 +1,100 @@
+.orange-container {
+  @include flex;
+  @include justify-content(center);
+  @include align-items(center);
+  @include size($height: 100vh);
+  .orange-face {
+    @include position(relative);
+    display: block;
+    @include flex;
+    @include justify-content(center);
+    @extend .circle;
+    @include size($width: 500px, $height: 500px);
+    background-color: $color_orange;
+    .eye {
+      @include position(relative);
+      @include size($width: 150px, $height: 150px);
+      background: $color_white;
+      @extend .circle;
+      margin-top: 130px;
+      &-left {
+        margin-right: 30px;
+      }
+      &-right {
+        margin-left: 30px;
+      }
+      .iris {
+        @include position(absolute, $top: 5%);
+        @include size($width: 80%, $height: 80%);
+        background: $color_black;
+        @extend .circle;
+        right: 5%;
+      }
+      .pupil {
+        background: $color_white;
+        @extend .circle;
+        @include position(absolute);
+        &-small {
+          @include size($width: 21px, $height: 22px);
+          top: 15%;
+          left: 45%;
+          transform: rotate(-10deg);
+        }
+        &-medium {
+          @include size($width: 28px, $height: 27px);
+          top: 25%;
+          left: 67%;
+        }
+        &-large {
+          @include size($width: 30px, $height: 30px);
+          top: 45%;
+          left: 50%;
+          transform: rotate(-10deg);
+        }
+      }
+    }
+    &:after {
+      display: block;
+      content: "";
+      @include position(absolute, $top: -3%, $left: 5%);
+      @include size($width: 90%, $height: 98%);
+      background: transparent;
+      @extend .circle;
+      box-shadow: 0 20px 30px $color_orange_dark;
+    }
+  }
+  .mouth {
+    @include position(absolute, $top: 60%, $right: 0, $left: 0);
+    @include size($width: 115px, $height: 110px);
+    margin: 0 auto;
+    border-bottom: 48px solid $color_orange_mouth;
+    border-radius: 100%;
+    transform: rotate(5deg);
+    z-index: 3;
+  }
+  .leaf-container {
+    @include position(absolute, $top: -20%);
+    .twig {
+      @include position(relative, $top: 15px);
+      @include size($width: 8px, $height: 110px);
+      background: $color_orange_twig;
+      border-radius: 100%;
+      transform: rotate(-30deg);
+    }
+    .leaf {
+      @include position(absolute, $top: -45px, $left: 31px);
+      @include size($width: 150px, $height: 150px);
+      border-radius: 120px 0;
+      background: $color_orange_leaf;
+      transform: rotate(10deg);
+    }
+    .shadow {
+      width: 50px;
+      height: 10px;
+      margin: 0 auto;
+      border-radius: 100%;
+      background: $color_orange_dark;
+    }
+  }
+}
+
