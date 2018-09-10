@@ -53,15 +53,6 @@
         }
       }
     }
-    &:after {
-      display: block;
-      content: "";
-      @include position(absolute, $top: -3%, $left: 5%);
-      @include size($width: 90%, $height: 98%);
-      background: transparent;
-      @extend .circle;
-      box-shadow: 0 20px 30px $color_orange_dark;
-    }
   }
   .mouth {
     @include position(absolute, $top: 60%, $right: 0, $left: 0);
